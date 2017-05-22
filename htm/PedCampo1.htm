@@ -1,0 +1,29 @@
+<style>
+#idPedCampo1{
+background-color: rgb(241, 241, 241);
+color: rgb(85, 85, 85);}
+</style>
+
+<input type="checkbox" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Aceito os termos"><span class="smText">Estou ciente do Sumário do Contrato. <a href="#contrato" onclick="window.open('/Custom.asp?IDLoja=<IDLoja>&arq=Resumodocontrato.htm&int=1', 'Termo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=600, HEIGHT=600');">Saiba mais.</a></span><br>
+      <div id=idErrFieldP2PedCampo1FC style="display:none" class=EstErrField><span id=idTxtErrFieldP2PedCampo1FC class=EstTxtErrField></span></div>
+
+
+<script>
+var ErrPedCampo1=0;
+function PedValidaCampo1(){
+  var iSelect=0,Achei=false;
+  while(iSelect<document.Form1.P2PedCampo1.length && !Achei){
+    if(document.Form1.P2PedCampo1[iSelect].checked)Achei=true;
+    else iSelect++;
+  }
+  if(!Achei){
+    oP2PedCampo1=F$.GetID('P2PedCampo1');
+    ErrPedCampo1++;
+    if(ErrPedCampo1==1)F$.fnShowErrField(oP2PedCampo1,"Você deve aceitar os termos");
+    else alert("Por favor, leio os termos e marque o campo 'Estou ciente'");
+    document.Form1.P2PedCampo1[0].focus();
+    return false;
+  }
+  else return true;
+}
+</script>
