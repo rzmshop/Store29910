@@ -1,0 +1,8 @@
+/* PopNews*/
+#FullBackground{position: absolute; min-width: 100%; min-height: 100%; background: #000; z-index: 99999999; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; opacity: 0.55; display: none;}
+#popupNews{position: absolute; z-index: 999999991; background:#fff; width: 535px; min-height: 200px; border-radius: 5px; box-shadow: 0 0 5px 0 black; text-align: center; padding:5px 10px; display: none;}
+#popupNews h1{color:#0574c9; top:0px; left:2px;}
+#popupNews span{color:#423e3e; font-size: 13px; font-weight: bold;}
+.btnClose{width: auto; height:auto; display: block; padding:10px 3px 0 0; float: right; }
+#formPopup input[type="text"], input[type="email"]{background: #fff; border-radius: 5px; box-shadow: -1px 0 3px 0 #ccc inset; padding: 5px 5px; width: 210px; color:#000}
+.btnSubPop{border: 0px; background: url('../../images/popnews/btnsubpop.png') no-repeat; width: 138px; height: 47px; cursor:pointer;}
