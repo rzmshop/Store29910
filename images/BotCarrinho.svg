@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="200px" height="50px" viewBox="0 0 200 50" enable-background="new 0 0 200 50" xml:space="preserve">
+<rect fill="#00D300" width="200" height="50"/>
+<text transform="matrix(1 0 0 1 84.8555 31.958)" fill="#FFFFFF" font-family="'Arial'" font-size="20">Comprar</text>
+<rect fill="#0FBC0F" width="47.167" height="50"/>
+<path fill="#FFFFFF" d="M16.723,28.173l15.786-3.03l1.603-8.005H14.85l-1.007-3.889H9.727l0.463,1.79l2.008-0.007l2.945,11.625
+	c-1.851,0.769-2.658,5.669,1.713,5.669c1.053,0,15.737,0,15.737,0l0.388-2.005c0,0-13.653-0.01-15.668-0.01
+	C15.319,30.313,15.256,28.518,16.723,28.173z"/>
+<circle fill="#FFFFFF" cx="18.51" cy="34.922" r="1.83"/>
+<circle fill="#FFFFFF" cx="29.627" cy="34.922" r="1.83"/>
+</svg>
