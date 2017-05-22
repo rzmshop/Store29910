@@ -1,0 +1,75 @@
+/* PopNews*/
+#FullBackground {
+	position: absolute;
+  	/*background: #fff;8?
+	z-index: 99999999;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 550px;
+	height: 370px;
+  	overflow: hidden;
+	display: none;
+}
+#popupNews {
+	position: absolute;
+  z-index: 999999991;
+	width: 550px;
+	height: 370px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 0 black;
+	text-align: center;
+	padding: 5px 10px;
+	background-image: url(../../images/popnews/fundo.jpg);
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+#popupNews h1 {
+	color: #0574c9;
+	top: 0px;
+	left: 2px;
+}
+#popupNews span {
+	color: #423e3e;
+	font-size: 13px;
+	font-weight: bold;
+}
+.btnClose {
+	width: auto;
+	height: auto;
+	display: block;
+	padding: 10px 3px 0 0;
+	float: right;
+}
+#formPopup input[type="text"], input[type="email"] {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: -1px 0 3px 0 #ccc inset;
+	padding: 5px 5px;
+	width: 210px;
+	color: #000;
+	z-index: 99999991;
+}
+.btnSubPop {
+	border: 0px;
+	width: 138px;
+	height: 47px;
+	cursor: pointer;
+	position: absolute;
+	top: 270px;
+	left: 280px;
+	background-image: url(../../images/popnews/btnsubpop.png);
+	background-repeat: no-repeat;
+}
+.fnome {
+	left: 280px;
+	top: 180px;
+	position: absolute;
+}
+.femail {
+	position: absolute;
+	left: 280px;
+	top: 220px;
+}
