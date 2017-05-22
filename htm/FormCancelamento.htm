@@ -1,0 +1,117 @@
+<table align="center" width="90%" cellspacing="0" cellpadding="0" style="border-width:1px;border-style:solid;border-color:#E0E0E0;">
+  <tr>
+    <td>
+      <table align="center" width="100%" cellspacing="1" cellpadding="5" class="EstTabQuadro">
+            <form name="formCancPed" method="POST" action="EnviaMail.asp">
+              <input type="hidden" name="NomePara" value='<nomeloja>'>
+              <input type="hidden" name="EmailPara" value='<mailloja>'>
+              <input type="hidden" name="Assunto" value=''>
+              <input type="hidden" name="URLRetorno" value='<HTMLoja>FormCancelAgrad.htm'>
+              <input type="hidden" name="OrdemCampos" value='NumPedido,NomeDe,EmailDe,TelefoneDe,Motivo'>
+        <tr>
+          <td align="center" colspan=2 class=EstTabPedidoTit>Solicitação de cancelamento de pedido</td>
+        </tr>
+        <tr>
+          <td align="left" colspan=2 class=xEstTabPedidoTit>Preencha os campos abaixo para solicitar o cancelamento de seu pedido feito nesta loja virtual:</td>
+        </tr>
+        <tr>
+          <td width=120 align="right" class=EstNomeCampo>Nº Pedido:</td>
+          <td><input type="text" name=NumPedido class=InputText size=10 maxlength=10></td>
+        </tr>
+        <tr>
+          <td width=120 align="right" class=EstNomeCampo>Nome:</td>
+          <td><input type="text" name=NomeDe class=InputText size=35 maxlength=100></td>
+        </tr>
+        <tr>
+          <td width=120 align="right" class=EstNomeCampo>E-mail:</td>
+          <td><input type="text" name=EmailDe class=InputText size=35 maxlength=100></td>
+        </tr>
+        <tr>
+          <td width=120 align="right" class=EstNomeCampo>Telefone:</td>
+          <td><input type="text" name=TelefoneDe class=InputText size=25 maxlength=50> <i>(11) 2222-1111</i></td>
+        </tr>
+        <tr>
+          <td align="right" valign=top class=EstNomeCampo>Motivo:</td>
+          <td><textarea wrap=virtual cols=28 rows=8 name="Motivo" class=InputText style=height:150px;width:300px></textarea></td>
+        </tr>
+        <tr>
+          <td colspan=2 align="center"><input type=button name=Enviar value=' Enviar ' class=InputButton onclick='javascript:ValidaformCancPed()'></td>
+        </tr></form>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<script>
+function ValidaformCancPed(){
+
+  //Adicionar número do pedido no assunto
+  var NumPedidoVar = formCancPed.NumPedido.value;
+  document.formCancPed.Assunto.value = "Solicitação de cancelamento de pedido # "+ NumPedidoVar;
+
+  //Número do pedido
+  if((isEmpty(document.formCancPed.NumPedido.value)) || (isNaN(document.formCancPed.NumPedido.value))){
+    AvisoErroCampo(document.formCancPed.NumPedido,'Informe o número do pedido corretamente.');
+    return false;
+  }
+
+  //Contato Nome
+  if(isEmpty(document.formCancPed.NomeDe.value)){
+    AvisoErroCampo(document.formCancPed.NomeDe,'Informe seu nome.');
+    return false;
+  }
+
+  //E-mail
+  if(isEmpty(document.formCancPed.EmailDe.value) || !ValidaEmailInt(document.formCancPed.EmailDe.value)){
+    AvisoErroCampo(document.formCancPed.EmailDe,'Informe seu e-mail.');
+    return false;
+  }
+
+  //Telefone
+  if(isEmpty(document.formCancPed.TelefoneDe.value)){
+    AvisoErroCampo(document.formCancPed.TelefoneDe,'Informe seu telefone.');
+    return false;
+  }
+
+ //Comentários
+ if(isEmpty(document.formCancPed.Motivo.value)){
+    AvisoErroCampo(document.formCancPed.Motivo,'Preencha o motivo do cancelamento.');
+    return false;
+ }
+  document.formCancPed.submit();
+}
+
+function ValidaEmailInt(sEmail) {
+  var regex=/^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+  return regex.test(sEmail);
+}
+
+function retiraEspaco(theString) {
+//retira espaços de string
+  if(theString.indexOf(" ")>=0){
+    var i=0;
+    while(theString.indexOf(" ")>=0){
+      if(theString.charAt(i)==" ")theString=theString.substring(0,i)+theString.substring(i+1,theString.length);
+      else i++;
+    }
+    newString=theString;
+  } 
+  else newString=theString;
+  return newString;
+}
+
+function isEmpty(s){return((retiraEspaco(s)==null)||(retiraEspaco(s).length==0));}
+
+function AvisoErroCampo(theField,warnText){
+  theField.focus();
+  theField.select();
+  alert(warnText);
+  return false;
+}
+
+function AvisoErroCampo_SelectBox(theField,s){
+  theField.focus();
+  alert(s);
+  return false;
+}
+</script>
