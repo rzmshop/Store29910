@@ -1,0 +1,319 @@
+<!-- Fastcommerce - EstiloProduto9.htm (Fast Preview Modelo) -->
+
+<ProdTop>
+<script src="<BaseLoja>htm/LojaLib.js"></script>
+<script src="<BaseLoja>htm/JurosParcelas.js"></script>
+<link href="<BaseLoja>htm/LojaSite.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css" />
+<script type="text/javascript" src="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js"></script>
+
+<script>
+function LinkDisp(Estoque,IDProduto){
+ if(Estoque==0){
+    document.write("<a href='javascript:MostraDisp("+ FC$.IDLoja +","+ IDProduto +")' title='Clique aqui para ser avisado quando este produto estiver disponível'>Avise-me quando estiver disponível</a>");
+ }
+}
+
+function ShowCartOnPage(IDLoja,iErr,sMsg,sCartText,sCheckoutText,este){
+  var oPos=getPos(este);
+  if(oDivShowCartOnPage==null){
+    var oNewElement=document.createElement("div");
+    oNewElement.setAttribute("id","DivShowCartOnPage"); 
+    oDivShowCartOnPage=este.parentNode.insertBefore(oNewElement,este);
+  }
+
+  oDivShowCartOnPage.style.backgroundColor="#fcfcfc";
+  oDivShowCartOnPage.style.borderColor="#cdcdcd";
+  oDivShowCartOnPage.style.color="#555555";
+  oDivShowCartOnPage.style.border="1px solid #cdcdcd";
+  oDivShowCartOnPage.style.marginTop="-110px";
+  oDivShowCartOnPage.style.marginLeft="0px";
+  oDivShowCartOnPage.style.position="absolute";
+  oDivShowCartOnPage.style.zIndex="1";
+  oDivShowCartOnPage.style.visibility="visible";
+
+  var iW=230;
+  var iH=100;
+
+  if(iErr==0)sBackColor="3187e6"; else sBackColor="949494";
+  var sHTML="<table id=idTabShowCartOnPageFC width='"+iW +"' height='"+ iH +"' cellpadding=3 cellspacing=3>";
+     sHTML+="<tr onclick=window.parent.location.href='addproduto.asp?idloja="+ IDLoja +"' ><td id=idTDTitShowCartOnPageFC colspan=2 align=center style='background-color:#"+ sBackColor +";color:#ffffff;border-width:1px;border-color:#3b6e22;font-weight:bold;font-size:12px;cursor:pointer'><div style='padding:8px;'>"+ sMsg +"</div></td></tr>";
+     if(iErr==0){
+       sHTML+="<tr height=35>";
+       sHTML+="<td align=center style=cursor:pointer onclick=window.parent.location.href='addproduto.asp?idloja="+ IDLoja +"'><a href='#na' onclick=window.parent.location.href='addproduto.asp?idloja="+ IDLoja +"' style='color:#444444;text-decoration:none;font-size:14px;font-weight:bold;'>Ir para o carrinho</a></td>";
+       sHTML+="<td align=left><img hspace=5 src='"+ FC$.PathImg +"iconclose.svg' width=20 height=20 style='cursor:pointer;margin-top:10px' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
+       sHTML+="</tr>";
+       sF$.fnUpdateCart(true,true);
+     }
+     else{
+       sHTML+="<tr height=20>";
+       sHTML+="<td colspan=2 align=center><img hspace=5 src='"+ FC$.PathImg +"iconclose.svg' width=20 height=20 style='cursor:pointer' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
+       sHTML+="</tr>";
+     }
+     sHTML+="</table>";
+  oDivShowCartOnPage.style.top=oPos.y+"px";
+  oDivShowCartOnPage.style.left=oPos.x+"px";
+  oDivShowCartOnPage.innerHTML=sHTML;
+  iLastCartOnPage++;
+  setTimeout("if(iLastCartOnPage=="+ iLastCartOnPage +")oDivShowCartOnPage.style.visibility='hidden';",4000);
+
+}
+</script>
+
+<style type="text/css">
+.TitTabParc{font-weight:bold;font-size:8pt;font-family:tahoma,arial;}
+.EstParcPar{background:#F5F5F5;font-size:8pt;font-family:tahoma,verdana;}
+.EstParcImpar{background:#FFFFFF;font-size:8pt;font-family:tahoma,verdana;}
+#idDivPagProd, #idDivOrder, #idDivPath, #idDivSearch {margin-top:15px;width:97%;border-style:solid;border-width:1px;border-color:#ffffff;}
+#idUlPathSearchFC {margin-left:10px;font-size:8pt;}
+#idUlPathSearchFC li{font-size:8pt;}
+#idUlPathSearchFC #idPathSearchTextInputFC{width:95px;background-color:#fcfcfc;font-size:9pt;}
+#idLinkAdvancedSearchFC {text-decoration:none;font-size:8pt;}
+#idLinkAdvancedSearchFC:hover{text-decoration:underline;color:#333333;}
+.EstTitQts {font-family:tahoma;font-size:8pt;background-color:#eaeaea;padding:5px;}
+.EstDivQts{height:100%;border-style:solid;border-width:1px;border-color:#d0d0d0;}
+#idSelPathCatQtFC, #idSelAdic1QtFC, #idSelAdic2QtFC, #idSelAdic3QtFC {width:100%;}
+#idUlPathCatQtFC li,#idUlAdic1QtFC li,#idUlAdic2QtFC li,#idUlAdic3QtFC li{list-style-type:none;font-size:8pt;margin:5px 10px 3px 5px}
+.EstTabFiltersExt{background-color:#ebebeb;height:28px;font-family:tahoma;font-size:8pt;}
+.EstTabFiltersInt{background-color:#f7f7f7;}
+#idTitTextoFC, #idEstTitProdCrossFC {display:none}
+#idLinhaProdCrossFC, #idTitProdCrossFC, #idContentProdCrossFC {display:none}
+.StyProdName{color:#1a75d7;font-size:12px;}
+.StyProdTidDescr{color:#444444;font-size:10px;}
+
+.Buy{margin-top:1em;}
+.Buy .ButtonBuy{
+     transition: background-color 0.3s ease;
+     font-size:16px;
+     background-color: #44ac55;
+     border-radius: 3px;
+     -webkit-border-radius: 3px;
+     -moz-border-border-radius: 3px;
+     border: none;
+     color: #fff;
+     cursor:pointer;
+     width:230px;
+     text-transform: uppercase;
+     padding: 12px 25px 10px 25px;
+}
+
+.Buy .ButtonBuy:hover {
+     background-color:#3f9b4e;
+}
+
+.Buy .ButtonDisp{
+     font-size:16px;
+     background-color: #dedede;
+     border-radius: 3px;
+     -webkit-border-radius: 3px;
+     -moz-border-border-radius: 3px;
+     border: none;
+     color: #555;
+     cursor:pointer;
+     width:230px;
+     padding: 12px 25px 10px 25px;
+}
+.Buy .ButtonDisp:hover {
+     background-color:#eeeeee;
+}
+
+.StySubProd{
+  margin-top:20px;
+  padding:20px;
+  border-top-style:solid;
+  border-top-width:1px;
+  border-top-color:#cdcdcd;
+  box-sizing: border-box;
+}
+
+.ProdListaDiv img{width:100px;height:100px;padding:15px;}
+.TxtDisp{font-size:12px;padding-top:8px;}
+
+.hideSpy{display: none;}
+.isFontSpy{font-size: 25px;}
+
+</style>
+</ProdTop>
+
+<ProdLista>
+<!-- Prod Lista -->
+</ProdLista>
+
+<ProdDet>
+<!-- Prod Det -->
+
+<table width="100%" border="0" cellpadding="10" cellspacing="10">
+  <tr>
+    <td align="center">
+<FormProd>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td colspan="2" class="StyProdName"><h1><NomeProd></h1><br /></td>
+        </tr>
+        <tr>
+          <td width="50%" align="center" valign="top">
+            <!-- começo :: zoom com várias imagens -->
+            <script>
+            var imgDetAll = "<ImagemProdDet>";
+            var imgAmpAll = "<ImagemProdAmp>";
+            var novoArray = imgDetAll.split(',');
+            var novoArrayAmp = imgAmpAll.split(',');
+            var CountImgDet=novoArray.length;
+            var CountImgAmp=novoArrayAmp.length;
+            
+            if (imgDetAll=="" || imgAmpAll==""){
+              document.write("");
+            }
+            else{
+              if (CountImgDet==CountImgAmp){
+                var FC_MaxImages=CountImgDet-1;
+                MostraZoomImgFC();
+              }
+              else{
+                var FC_MaxImages=0;
+                MostraZoomImgFC();
+              }
+            }
+            
+            function MostraZoomImgFC(){
+              for (var i=0;i<=FC_MaxImages;i++)
+              {
+                if(i==0)
+                {
+                   imgDetMini=novoArray[i];
+                   imgAmpMini=novoArrayAmp[i];
+                   document.write("<a href="+imgAmpMini+" title='<NomeProd>' class='MagicZoomPlus' id='zoom2' rel='selectors-class:active; zoom-width:350px; zoom-height:350px; selectors-change:mouseover;'><img src="+ imgDetMini +"></a><br>");
+                   document.write('<p><a onclick="MagicZoomPlus.expand(zoom2); return false;" href="#">Ampliar imagem</a></p>');
+                   document.write("<a href="+imgAmpMini+"  rel='zoom-id:zoom2;' rev="+ imgDetMini +"><img src="+ imgDetMini +" width=75 height=45 class=ZoomIMG2></a>");
+                }
+                else{
+                      imgDetMini="<BaseLoja>prod/"+novoArray[i];
+                      imgAmpMini="<BaseLoja>prod/"+novoArrayAmp[i];
+                      document.write("<a href="+imgAmpMini+" rel='zoom-id:zoom2;' rev="+ imgDetMini +"><img src="+ imgDetMini +" width=75 height=45 class=ZoomIMG2></a>");
+                }
+              }
+            }
+            </script>
+            <!-- fim :: zoom com várias imagens -->
+          </td>
+          <td valign="top">
+            <div class="DivPrice">
+              <div class="Price"> 
+                <div id="PosPrice"><div class="ProdPrice" id="idProdPrice<IDProduto>"></div></div>
+                <script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script>
+                <p id="idPriceAVista">
+                  <script>sF$.fnMostraDescontoProdDet(<PrecoNum>);</script>
+                </p>
+                <div class="Buy">
+                  <span id="idButtonProd<IDProduto>">
+                    <LinkComprar64>
+                  </span>
+                  <span id="idAvisoProd<IDProduto>" style="display: block; margin: 10px 0;"></span>
+                  <script>sF$.fnShowButtonCart(<Estoque>,<IDProduto>);</script>
+                </div>
+              </div>
+            </div>
+            <table name="Tab1Adic<IDProduto>" cellpadding="0" cellspacing="0" style="margin-top:20px;">
+              <tr><td nowrap="nowrap"><Adicional1></td></tr>
+              <tr><td nowrap="nowrap"><Adicional2></td></tr>
+              <tr><td nowrap="nowrap"><Adicional3></td></tr>
+              <tr><td nowrap="nowrap"><AdicionalD1></td></tr>
+              <tr><td nowrap="nowrap"><AdicionalD2></td></tr>
+              <tr><td nowrap="nowrap"><AdicionalD3></td></tr>
+              <tr><td nowrap="nowrap"><Peso></td></tr>
+              <tr><td nowrap="nowrap"><Cor></td></tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" colspan="2" valign="top"><br /><br /></FormProd></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="StyProdTidDescr"><h1>Descrição:</h1></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="StyProdDescr"><DescricaoLonga> <br /><br /> <DescrHTM></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><VideoProd></td>
+        </tr>
+        <tr>
+          <td colspan="2"><DescrURL></td>
+        </tr>
+      </table>
+
+      <!-- SUB Prod Det -->
+      <sub>
+      <FormProd>
+      <div class="StySubProd">
+      <table width="100%">
+        <tr>
+        <td>
+          <table width="100%">
+            <tr>
+              <td rowspan="6" width="100" align="center"><div class="ProdListaDiv"><img onError="MostraImgOnError(this,0)" src="<ImagemProdPri>"></div></td>
+              <td class="StyProdRefSub"><NomeProd> <CodProd></td>
+              <td rowspan="6" width="238">
+                <div class="DivPrice">
+                  <div class="Price">
+                    <div><div class="ProdPrice" id="idProdPrice<IDProduto>"></div></div>
+                    <script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script>        
+                    <div class="Buy">
+                      <span id="idButtonProd<IDProduto>">
+                        <LinkComprar64>
+                      </span>
+                      <span id="idAvisoProd<IDProduto>" style="display: block; margin: 10px 0;"></span>
+                    </div>
+                    <script>sF$.fnShowButtonCart(<Estoque>,<IDProduto>);</script>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="StyProdRefSub"><NomeCat></td>
+            </tr>
+            <tr>
+              <td class="StyProdDescr"><Descricao></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>
+                <table width="100%" border="0">
+                  <tr>
+                    <td>
+                      <table name="TabAdicionaisSub<IDProduto>" cellpadding="0" cellspacing="0">
+                        <tr><td nowrap="nowrap"><Adicional1></td></tr>
+                        <tr><td nowrap="nowrap"><Adicional2></td></tr>
+                        <tr><td nowrap="nowrap"><Adicional3></td></tr>
+                        <tr><td nowrap="nowrap"><AdicionalD1></td></tr>
+                        <tr><td nowrap="nowrap"><AdicionalD2></td></tr>
+                        <tr><td nowrap="nowrap"><AdicionalD3></td></tr>
+                        <tr><td nowrap="nowrap"><Peso></td></tr>
+                        <tr><td nowrap="nowrap"><Cor></td></tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        </tr>
+      </table>
+      </FormProd>
+      </div>
+      </sub>
+
+    </td>
+  </tr>
+</table>
+</ProdDet>
+
+<ProdAmp>
+<!-- Prod Amp -->
+</ProdAmp>
+
+<ProdBottom>
+</ProdBottom>
