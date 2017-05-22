@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="45px" viewBox="0 0 200 45" enable-background="new 0 0 200 45" xml:space="preserve">
+<style>
+text{fill:#ffffff;font-family:verdana,arial}
+</style>
+<rect x="0.25" fill="#00D300" width="199.75" height="45"/>
+<text transform="matrix(1.0388 0 0 1 14.4995 30.0195)" font-size="18.3616">COMPRAR</text>
+<g>
+	<path fill="#FFFFFF" d="M161.722,24.673l15.787-3.03l1.602-8.006H159.85l-1.007-3.889h-4.117l0.463,1.79l2.008-0.007l2.945,11.625
+		c-1.85,0.769-2.658,5.669,1.714,5.669c1.052,0,15.737,0,15.737,0l0.387-2.004c0,0-13.653-0.01-15.667-0.01
+		C160.319,26.812,160.256,25.018,161.722,24.673z"/>
+	<circle fill="#FFFFFF" cx="163.51" cy="31.422" r="1.83"/>
+	<circle fill="#FFFFFF" cx="174.627" cy="31.422" r="1.83"/>
+</g>
+</svg>
