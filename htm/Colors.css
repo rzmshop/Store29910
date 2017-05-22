@@ -1,0 +1,235 @@
+/* Fastcommerce - Xtreme Responsive Store - Colors -  Jul/2015 (v4) */
+
+th {background:#FFFFCC;color:#336699;}
+h1,h2,h3,h4,h5,h6{font-family:'Open Sans',verdana,arial !important;font-weight:700 !important;}
+.Titulos {color:#515967;}
+.lgtxt {color:#616161;}
+input, textarea{color:#555555;}
+input[type="text"],input[type="number"]{color:#555555;border:1px solid #cacaca;}
+
+/* Style Buttons */
+.BotLancamento {color:#FF0101;}
+.BotMaisDetalhes {color:#990000;}
+.BotCartProd text{fill:#ffffff;}
+.BotCartProd:hover rect{fill: #10E410;}
+
+/* Header - BarraTopo.htm */
+.InputTextBusca{border: 0 solid #ff0000;}
+.btn1{color:#333;box-shadow:0 0 5px 0 #ccc;}
+.HeaderMainMenuFC{background:none repeat scroll 0 0 #000000;border-bottom:2px solid #000000;}
+.HeaderMenuULFC a li{color:#fff;}
+.HeaderMenuULFC a:hover li{background:#212121;}
+.HeaderMenuULFC svg{fill:#ffffff;}
+.HeaderMenuULFC a:hover svg{fill:#616161;}
+.HeaderCartMainFC path, .HeaderCartMainFC circle{fill:#616161;}
+.HeaderCartMainFC:hover path, .HeaderCartMainFC:hover circle{fill:#1baa32;}
+a #HeaderCartItemFC{color:#616161;}
+a #HeaderCartTotalFC{color:#433f37;}
+.HeaderMenuOneFC ul li a{color:#616161}
+.btn-sent{background: none repeat scroll 0 0 #616161 !important;}
+
+/* Header - ToolBar - BarraTopo.htm */
+.FCToolBar{background: #efefef;box-shadow: 0 0 5px #000;}
+.FCToolBarChatTel p{color: #333333;}
+.FCToolBarChatTel a svg path{fill:#616161}
+.HeaderMenuCatDepFC svg path{fill:#616161}
+
+/* Header - AutoSuggest */
+.autocomplete-w1 {}
+.autocomplete{border:1px solid #FF6600;background:#FFFFFF;}
+.autocomplete .selected{background:#ff6600;color:#FFFFFF;}
+.autocomplete .selected{color:#FFFFFF;}
+.autocomplete strong{color:#4396ca;}	
+.autocomplete .selected strong{color:#000000;}
+.autocomplete .suggestions{background:#f4f4f4;}
+.autocomplete .selected .suggestions {color:#000000;}
+.autocomplete .suggestionsResults{background:#f4f4f4;color:#377f44;}
+.autocomplete .selected .suggestionsResults{color:#000000;}
+#as-valor-prod{color:#44ac55 !important;}
+.hideSuggestClass{border:1px solid #D4D4D4;background-color:#FFFFFF;}
+.showSuggestClass .hoverSuggestClass{background-color:#E4E4E4}
+
+/* Main - Home.htm */
+.MainHomeBoxTitFC{color:#616161;}
+.DivHomeProd{border: 1px solid #fff;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-bottom-color:#ffffff;}
+.DivHomeProd:hover{box-shadow: 0 0 5px 0 #ccc, 0 3px 0 #616161;}
+.DivHomeNomeProd{color:#616161;}
+.DivHomeSpy a{background-color:#dedede; border:0 solid #616161;color:#666666;}
+.DivHomeSpy a:hover{background-color:#666666; color:#fcfcfc;}
+.DivHomeDetails a{background-color:#dedede; border:0 solid #616161;color:#616161;}
+.DivHomeDetails a:hover{ background-color:#616161;color:#fcfcfc;}
+.HomeNomeProd{color: #616161;}
+.prices a, .prices {color: #44ac55;}
+
+/* List - EstiloProduto.htm */
+.ProductStyleULFC h1{color:#616161;}
+.DivListProd{border-bottom: 1px solid #cccccc;}
+.DivListProd:hover{box-shadow: 0 0 5px 0 #cccccc, 0 3px 0 #616161;}
+.DivListProdProd{border: 1px solid #fff;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-bottom-color:#ffffff;}
+.DivListProdProd:hover{box-shadow: 0 0 5px 0 #ccc, 0 3px 0 #616161;}
+.DivListProdNomeProd{color:#616161;}
+.DivListProdSpy a{background-color:#dedede; border:0 solid #616161;color:#666666;}
+.DivListProdSpy a:hover{background-color:#666666; color:#fcfcfc;}
+.DivListProdDetails a{background-color:#dedede; border:0 solid #616161;color:#616161;}
+.DivListProdDetails a:hover{ background-color:#616161;color:#fcfcfc;}
+.ListProdNomeProd{color: #616161;}
+.por{lcolor: #666666;}
+.old-price{color: #999999;color: #999999;}
+.installments{color: #666666;}
+.ProdParcels .installments{color: #666666;}
+.text-banner{text-shadow: 0 1px 5px #333333;}
+.btn-large:visited{color: #FFFFFF !important;}
+.link-descr{color:#555555;}
+.link-descr:visited{color:#555555;}
+.AdicItem{color: #6c6c6c;}
+.AdicNome{color: #6c6c6c;}
+.EstParcPar{background:#F5F5F5;}
+.EstParcImpar{background:#FFFFFF;}
+#idDivPagProd, #idDivOrder, #idDivPath, #idDivSearch{border-color:#ffffff;}
+#PriceAVista{background-color:#f5f5f5;}
+
+/* Breadcrumb - EstiloProduto.htm */
+.ProductStyleBreadCrumblinkFC{color:#6c6c6c;}
+.EstPathCatLink{color:#6c6c6c;}
+.EstPathCatLink:hover{color:#616161;}
+.EstPathCatLink:visited{color:#6c6c6c;}
+
+/* Product Detail */
+#PrecoProdPrinc strike{color: #7c7c7c;}
+
+/* ZipCode - EstiloProduto.htm */
+.FieldCEPQty{border: 1px solid #cacaca;}
+.FieldCEPBtn{background: #666666; color: #FFFFFF;}
+#idDivContentFieldsCEP{border-top:1px solid #dedede;}
+#idDivCEPButton button{background-color: #dedede;color: #555555;}
+#idDivCEPButton button:hover {background-color:#eeeeee;}
+.ZipValue{color:#5C9E0D;}
+.ZipOption{border-top:1px solid #dedede;}
+.zip-container{border: 1px solid #e7e7e7;}
+
+/* SubProduct - EstiloProduto.htm */
+.SubProductStyleBoxFC{border:1px solid #cdcdcd;background:#fbfbfb;}
+
+/* List Filters - EstiloProduto.htm */
+#idHeadFilters{border-color:#cdcdcd;background-color: #fcfcfc;}
+#idShowFilters button{background-color:#5C9E0D;border:0 solid #5C9E0D;color:#fcfcfc;}
+#idShowFilters button:hover{background:#555555}
+#idHideFilters button{background-color:#555555;border:0 solid #555555;color:#fcfcfc;}
+#idHideFilters button:hover{background:#990000}
+#idFiltersFC{border-color:#cdcdcd;background-color: #fcfcfc;}
+#idFiltersFC ul li select{color: #555555;}
+#idDivSearch{border-color:#cdcdcd;background-color: #fcfcfc;}
+#idTxtRemoveFilters a{background-color:#616161;border:0 solid #616161;color:#fcfcfc;}
+#idTxtRemoveFilters a:hover{background-color:#990000;}
+#idUlPathSearchFC #idPathSearchTextInputFC{background-color:#fcfcfc;}
+#idLinkAdvancedSearchFC:hover{color:#333333;}
+.EstTitQts {background-color:#eaeaea;}
+.EstDivQts{border-color:#d0d0d0;}
+.EstTabFiltersExt{background-color:#ebebeb;}
+.EstTabFiltersInt{background-color:#f7f7f7;}
+.FCfnShowEconomy{color:#6f9e45}
+
+/* Reviews - EstiloProduto.htm */
+.EstOpiniaoLinha {color:#C5C2C2;}
+
+/* ProdDet SocialLinks */
+.ProdRating a{color:#333333;}
+
+/* Aside LeftBar - BarraEsquerda.htm */
+.left-bar h2, .EstListCat li{border-bottom: 1px solid #cccccc;}
+.EstListCat li a{color: #666666;}
+
+/* Footer - Rodape.htm */
+.FootterMainBarFC .row{background: #e2e2e2;}
+.FootterMainBarFC .row ul li a{color:#45413a}
+.FootterMainBarFC .row ul li a:hover{color:#292723}
+.FooterNewsletterBox{background-color:#FFFFFF}
+span .FooterNewsletterInput{border:1px solid #cccccc !important;color:#000000;}
+.FooterTecFastCommerce{color:#454139;}
+.FooterTecFastCommerce a{color:#454139;}
+.FooterInfosContainer svg{box-shadow: 0 0 5px 0 #CCCCCC; border: 1px solid #737373;}
+.FooterInfosContainer a:hover svg{box-shadow: 0 0 3px #515151;background-color:#f7f7f7;}
+.FooterInfosContainer a:hover path, .FooterInfosContainer a:hover rect, .FooterInfosContainer a:hover circle{fill:#616161;}
+.FooterInfosContainer a:hover text + text{fill:#000;}
+
+/* History */
+#idTitPageHistory{color:#616161;}
+.EstImagePageHistory{background-color:#FFFFFF;border:0 solid #cecece;}
+.EstNamePageHistory a{background-color:#FFFFFF;border:0 solid #cecece;color:#515967;}
+.EstNamePageHistory a:hover{background-color:#FFFFFF;border:0 solid #cecece;color:#515967;}
+.EstPricePageHistory{background-color:#FFFFFF;border:0 solid #cecece;color:#5c9e0d;}
+
+/*CrossSelling*/
+.DivCrossSelling{border-top-color: #cdcdcd;}
+#idTitProdCrossFC{color: #616161;}
+#idProdCrossFC {background-color:#FFFFFF;}
+.EstImageProdCross{background-color: #FFFFFF; border: 0 solid #cecece;}
+.EstCatProdCross{color: #333333;}
+.EstRefProdCross{color:#333333;}
+.EstPriceProdCross{background-color: #FFFFFF;border: 0 solid #cecece;color: #5c9e0d;}
+.EstDescrProdCross{border: 0 solid #cecece;color: #000000;}
+#idListProdCrossFC li:hover .EstDescrProdCross{background: #FFFFFF;border: 1px solid #cccccc;}
+#EstCommentsTxt{background: #FFFFFF; color: #616161;}
+ 
+/* Checkout */
+.FCCurrencyLabel{color:#666666;}
+
+/* Departments - Categorias.htm */
+.CatContainerFC{border: 1px solid #666666;}
+.CatListFC{background: #FFFFFF;}
+.CatSeeMoreFC{background: #616161;}
+.CatSeeMoreFC a{color: #FFFFFF;}
+
+/* init mixtiup */
+.FCBtnMixit{background: #e8e8e8;color: #555555;border-bottom: 1px solid #f2f2f2;}
+.activeCat{box-shadow: 0 0 5px 0 #333 inset; background: #616161; color: #FFFFFF;}
+
+/* News */
+.FCNews .StyTitNews a:hover{color:#2784e8;}
+.FCNews .smText{color:#555555;}
+.FCNews #idLocalDateNewsFC{color:#666666;}
+
+/* Button Ped Confirmação */
+.BotConfPed {background:green;color:#fcfcfc;border-color:#333333;}
+.EstTextoContinuar{color:green;}
+
+/* Xtreme Checkout */
+.FC-ShowCartOffPageLink a{color:#444444;}
+.FC-ShowCartOffPageLink a:hover{color:#444444;}
+.FC-ShowCartOnPageLink a{color:#004797;}
+.FC-ShowCartOnPageLink a:hover{color:#003a7c;}
+.FC-ShowCartOnPageLinkCart a{color:#ffffff;border-color:#3b6e22;}
+.FC-ShowCartOnPageLinkCart a:hover{color:#FFFFFF;border-color:#3b6e22;;}
+#idCheckoutFC a #idTxtLinkContinueFC{background-color:#6ea853;color:#FFFFFF;} 
+#idCheckoutFC a:hover #idTxtLinkContinueFC{background-color:#4c7738;color:#FFFFFF;}
+#idCheckoutFC .BotChkPaymentContinue:hover{background-color:#4c7738;border-color:#333333;color:#FCFCFC;}
+
+/* Store.css */
+#FCCartRightSubtotalPrice .FCCartSubtotalPriceLabel, #FCCartRightSubtotalPrice .FCCartSubtotalPriceValue{border-bottom: 1px solid #e8e8e8 !important;}
+
+/* Cart */
+#FCCartRightSummary{background: #FFFFFF !important}
+.FCCartRightCol{background: #FFFFFF;}
+#idTDFreightSimulationFC #idBut{background-color: #33a1ff;color: #FFFFFF;}
+
+/* Ajuda */
+.FCHelp .EstTabTopo{background:#dedede;}
+
+.StyPayment{background:#dedede;}
+.StyNamePayment{background:#dedede;}
+.StyDescrPayment{background:#fcfcfc;}
+
+/* Error 404 */
+.FCError404h1{color:#616161;}
+
+/* Media Queries */
+/* Small */
+@media only screen and (max-width: 640px){
+  .SmallMenuButtom{color: #FFFFFF;border-bottom: 1px solid #FFFFFF;}
+  .SmallMenuList a li{border-bottom: 1px solid #FFFFFF;}
+  .tinynav {color:#616161;}
+}
+
+/* Grid final Style */
+[class*='gridLevel']{border: 1px solid #cccccc;}
+
