@@ -1,0 +1,19 @@
+/* Estilos personalizados */
+
+.EstPassoCompraDiv{display:inline;padding:6px 6px 0px 6px;background-image:url(../images/SetaPassoCompra.png);background-repeat:no-repeat}
+.EstContinuarComprando {display:none;}
+#TabBancos {display:none;}
+
+#idImgBotPreviousPageFC, #idImgBotNextPageFC, #idTRPaginationProdHRFC {display:none;}
+#idPaginationProdFC {background-color:#f7f7f7;margin-top:10px;border-style:solid;border-width:1px;border-color:#dedede;padding:5px;margin-right:20px;}
+#idTxtBotPreviousPageFC{margin-left:10px;}
+#idTxtBotNextPageFC{margin-right:10px;}
+#idPaginationProdTopFC .smtext a, #idPaginationProdFC .smtext a{text-decoration:none;color:#525b6a;font-size:11px;padding:2px 3px 2px 3px;border-color:dddddd;border-width:1px;border-style:solid;background-color:#f7f7f7;}
+#idPaginationProdTopFC .smtext a:hover, #idPaginationProdFC .smtext a:hover {text-decoration:none;color:#333333;font-size:11px;padding:2px 3px 2px 3px;border-color:2d78ad;border-width:1px;border-style:solid;background-color:#e6ebf1;}
+#idPaginationProdTopFC #idCurrentPageFC, #idPaginationProdFC #idCurrentPageFC {text-decoration:none;color:#525b6a;font-size:11px;padding:2px 3px 2px 3px;border-color:2d78ad;border-width:1px;border-style:solid;background-color:#dae6f2;}
+#idPaginationProdTopFC #idPreviousPageFC, #idPaginationProdFC #idPreviousPageFC {width:12%;height:25px;}
+#idPaginationProdTopFC #idNextPageFC, #idPaginationProdFC #idNextPageFC {width:12%;height:25px;}
+#idPaginationProdTopFC #idPreviousPageFC a, #idPaginationProdFC #idPreviousPageFC a{text-decoration:none;}
+#idPaginationProdTopFC #idNextPageFC a, #idPaginationProdFC #idNextPageFC a{text-decoration:none;}
+#idPaginationProdTopFC #idMiddlePageFC, #idPaginationProdFC #idMiddlePageFC{width:76%;}
+#idPaginationProdTopFC .BotVerMais{display:none;}
