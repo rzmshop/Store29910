@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+    <form method="post" name="formIntegration" id="formIntegration" onSubmit="return DinamizeValidateForm(this)" action="https://receiver.emkt.dinamize.com/in/306262/1/d5c1">
+    <input type="hidden" name="update_mode" value="NA"><input type="hidden" name="text-confirmation" value="PGgyPlNldSBlLW1haWwgZm9pIGNhZGFzdHJhZG8gY29tIHN1Y2Vzc28hPC9oMj4="><input type="hidden" name="cmp4" value="RZM Shop"><input type="hidden" name="text-error" value="">
+    <div>
+
+      <input id="cmp2" name="cmp2" class="type_VC field-required" type="text" value="" maxlength="80">
+      <input id="cmp1" name="cmp1" class="type_EMAIL field-required" type="text" value="" maxlength="80">
+      <input type="submit" id="submit" value="Cadastre-se">
+    </div>
+    </form>
+</body>
+</html>
+<style type="text/css">
+    *, *::before, *::after{
+        -webkit-box-sizing: border-box; /* webkit */
+        -moz-box-sizing: border-box; /* firefox */
+        box-sizing: border-box; /* css3 */
+    }
+    #formIntegration{
+	width: 300px;
+	margin: 0 auto;
+	height: 250px;
+}
+#formIntegration div {
+	height: 250px;
+	width: 300px;
+	padding: 10px;
+	background-image: url(https://www.rumo.com.br/lojas/00029910/images/popnews/fundo.jpg);
+}
+    #formIntegration input[type="text"]{outline:none; width: 270px; }
+    #formIntegration input.type_PHN_DDI{
+	width: 50px;
+	text-align: center;
+	position: relative;
+}
+    #formIntegration input.type_PHN_NUM{width:216px;}
+#formIntegration div #cmp2 {
+	position: relative;
+	top: 110px;
+	width: 200px;
+	left: 80px;
+}
+#formIntegration div #cmp1 {
+	position: relative;
+	left: 80px;
+	top: 120px;
+	width: 200px;
+}
+#formIntegration div #submit {
+	position: relative;
+	left: 175px;
+	top: 130px;
+}
+    #formIntegration select{width:270px; overflow:auto;}
+    #formIntegration select.invi-select{display:none; width:0px; height:0px; border:none;}
+    #formIntegration textarea{width:270px; height:80px; overflow:auto; resize:vertical;}
+    #formIntegration div.containerMultiple {width:270px; max-height:82px; overflow:auto; border: 1px solid #bec5cb;}
+    #formIntegration div.containerMultiple div {height: 20px; overflow: hidden;}
+    #formIntegration div.containerMultiple div input{float:left;}
+    #formIntegration div.containerMultiple div label{float:left; padding-top:2px;}
+
+            #formIntegration label{ color: #4a5765; font-family: arial; font-size: 14px; }
+        #formIntegration input[type="submit"]{
+	border: medium none;
+	background-color: #0e6e0e;
+	color: #ffffff;
+	cursor: pointer;
+	font: bold 13px/38px Arial;
+	height: 30px;
+	padding: 0 15px;
+	display: inline-block;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin: 5px 0 0 0;
+}
+        #formIntegration input[type="text"]{
+	border: 2px solid #bec5cb;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow: 0 0 0 4px transparent;
+	color: #4a5766;
+	float: left;
+	font-size: 10px;
+	padding: 3px;
+}
+        #formIntegration input.type_PHN_DDI{margin-right:4px;}
+        #formIntegration div.containerMultiple,
+        #formIntegration select,
+        #formIntegration textarea{
+            border: 2px solid #bec5cb; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; box-shadow: 0 0 0 4px transparent; color: #4a5766;
+        }
+        #formIntegration select{height:40px;}                   
+  
+		#formIntegration .field-error{ border-color: #CC0000 !important; }
+</style>
+<script>
+    function DinamizeValidateForm(){
+        var enviar = true;
+        var elem = document.getElementById("formIntegration").elements;
+        var dateElements = new Array();
+        var floatElements = new Array();
+
+        for(var i = 0; i < elem.length; i++){
+            if( elem[i].type != "hidden" ){
+
+                var classList = elem[i].className.split(" ");
+                removeClass("field-error", elem[i]);
+
+                // validação
+                if(classList.indexOf("type_EMAIL") != -1){
+                    if(!validateEmail(elem[i].value) ){
+                        addClass("field-error", elem[i]);
+                        enviar = false;
+                    }
+                }
+               
+                // obrigatoriedade
+                if( classList.indexOf("field-required") != -1 ){
+                    //se o campo for multi valor, verificar suas checkboxes
+                    if(classList.indexOf("type_LVM") != -1){
+                        var nameChks = elem[i].getAttribute("id");
+                        var ok = false;
+                        var checkboxes = document.getElementsByClassName("chk_"+nameChks);
+
+                        removeClass("field-error", document.getElementById("containerMultiple_"+nameChks) );
+                        if (checkboxes.length != 0){
+                            for(var j=0; j < checkboxes.length; j++){
+                                if(checkboxes[j].checked == true){
+                                    ok = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if(!ok){
+                            addClass("field-error", document.getElementById("containerMultiple_"+nameChks) );
+                            enviar = false;
+                        }
+                    }else{
+                        //os outros campos podem ser verificados assim
+                        if( elem[i].value.trim() == "" ){
+                            addClass("field-error", elem[i]);
+                            enviar = false;
+                        }
+                    }
+                }
+            }
+        }
+
+    // colocar todos estes valores em inputs hidden
+            if(!enviar){
+            alert("Campo Obrigatório");
+        }
+        	return enviar;
+    } // fechamento da funcao js
+    
+    function validateEmail(email) {
+    	var re = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return re.test(email);
+    }
+
+    
+   function addClass( classname, element ) {
+        var cn = element.className;
+        if( cn.indexOf( classname ) != -1 ) {
+            return;
+        }
+        if( cn != "" ) {
+            classname = " "+classname;
+        }
+        element.className = cn+classname;
+    }
+
+   function removeClass( classname, element ) {
+       var cn = element.className;                     
+	   var rxp = new RegExp( "\\s?\\b"+classname+"\\b", "g" );
+       cn = cn.replace( rxp, "" );
+       element.className = cn;
+   }
+</script>
