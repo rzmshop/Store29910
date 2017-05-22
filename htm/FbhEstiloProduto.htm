@@ -1,0 +1,371 @@
+// FastCommerce - FbhEstiloProduto.htm (Layout modelo Facebook) 
+
+<ProdTop>
+<style>
+.TitTabParc{font-weight:bold;font-size:8pt;font-family:tahoma,arial}
+.EstParcPar{background:#efefef;font-size:8pt;font-family:tahoma,verdana}
+.EstParcImpar{background:#FFFFFF;font-size:8pt;font-family:tahoma,verdana}
+#idTitPagFC{display:none;}
+#idBRListaProdFC,#idBRListaProdNotFoundFC{display:none}
+
+#idDivPagProd, #idDivOrder, #idDivPath, #idDivSearch {margin-top:15px;width:97%;border-style:solid;border-width:1px;border-color:#dddddd;}
+#idUlPathSearchFC {margin-left:10px;font-size:8pt;}
+#idUlPathSearchFC li{font-size:8pt;}
+#idUlPathSearchFC #idPathSearchTextInputFC{width:95px;background-color:#fcfcfc;font-size:9pt;}
+#idLinkAdvancedSearchFC {text-decoration:none;font-size:8pt;}
+#idLinkAdvancedSearchFC:hover{text-decoration:underline;color:#333333;}
+.EstTitQts {font-family:tahoma;font-size:8pt;background-color:#eaeaea;padding:5px;}
+.EstDivQts{height:100%;border-style:solid;border-width:1px;border-color:#d0d0d0;}
+#idSelPathCatQtFC, #idSelAdic1QtFC, #idSelAdic2QtFC, #idSelAdic3QtFC {width:100%;}
+#idUlPathCatQtFC li,#idUlAdic1QtFC li,#idUlAdic2QtFC li,#idUlAdic3QtFC li{list-style-type:none;font-size:8pt;margin:5px 10px 3px 5px}
+
+</style>
+<JurosParcelas>
+
+<div id="idDivPath">
+  <table width="100%" bgcolor="#ebebeb" height="28">
+    <tr>
+      <td>
+        <table><tr>
+          <td style="font-family:tahoma;font-size:8pt;">&nbsp;&nbsp;&nbsp;Filtros de busca:</td>
+          <td>
+            <span id="idSpanShow"><a href="#Show" onClick="ToggleIDs('idSpanHide','idSpanShow');document.getElementById('idTablePathQtsFC').style.display='';RedefineTamanho();"><img src="images/IcShow.png"></a></span>
+            <span id="idSpanHide" style="display:none;"><a href="#Hide" onClick="ToggleIDs('idSpanShow','idSpanHide');document.getElementById('idTablePathQtsFC').style.display='none';RedefineTamanho();"><img src="images/IcHide.png"></a></span>
+          </td>
+        </tr></table>
+      </td>
+    </tr>
+  </table>
+  <table id="idTablePathQtsFC" style="display:none;" width="100%" bgcolor="#f7f7f7"><tr>
+    <tr>
+      <td width="100%" valign="top" id="idListaProdCategoriasFC"><div class="EstTitQts">&nbsp;<LegendaCats></div><ListPathCatQt></td>
+    </tr>
+  </table>
+</div>
+
+<div id="idDivSearch">
+  <table width="100%" bgcolor="#ebebeb" height="28">
+    <tr>
+      <td style="font-family:tahoma;font-size:8pt;">&nbsp;&nbsp;&nbsp;Filtrando por:</td>
+      <td id="idTDLinkAdvancedSearchFC" width="130" noWrap><LinkAdvancedSearch></td>
+    </tr>
+  </table>
+  <table id="idTablePathSearchFC" width="100%" bgcolor="#f7f7f7" height="40">
+    <tr>
+      <td id="idTDPathSearchFC"><ListPathSearch></td>
+    </tr>
+  </table>
+</div>
+
+<script>
+AjustaFiltros();
+var iQtdProds=<QtProd>;
+</script>
+
+<div id="idPagProdTop"></div>
+</ProdTop>
+
+<ProdLista>
+<br>
+<table width="100%" cellspacing="1" cellpadding="0" bgcolor="#cbd3df"><tr><td bgcolor="#FFFFFF">
+
+  <table width="100%" cellspacing="0" cellpadding="0">
+    <tr><FormProd>
+      <td width="130" align="center">
+        <table>
+          <tr>
+            <td height="120" align="center">
+              <div id="ProdCapaDiv"><a href="/prod,idloja,<idlojanum>,idproduto,<IDProduto>,<NomeProdUA>"><ImagemProd></a></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top">
+        
+        <table width="100%">
+          <tr><td><br><a href="/prod,idloja,<idlojanum>,idproduto,<IDProduto>,<NomeProdUA>" class="EstNomeProdutoHome"><NomeProd></a></td></tr>
+          <tr><td><Descricao></td></tr>
+          <tr><td>
+            <table width="100%">
+              <tr><td nowrap><Cor></td></tr>
+              <tr><td nowrap><Peso></td></tr>
+              <tr><td nowrap><Adicional1></td></tr>
+              <tr><td nowrap><Adicional2></td></tr>
+              <tr><td nowrap><Adicional3></td></tr>
+              <tr><td nowrap><AdicionalD1></td></tr>
+              <tr><td nowrap><AdicionalD2></td></tr>
+              <tr><td nowrap><AdicionalD3></td></tr>
+            </table>
+          </td></tr>
+          <tr>
+            <td class="EstPrecoProd">
+              <PrecoSimples><br>
+              <script>MostraMaxParcela(<PrecoNum>,<MaxParcelasProdNum>);</script>
+              <script>MostraEconomia(<PrecoNum>,<PrecoOri>);</script>
+            </td>
+            <td width="100" align="center">
+              <LinkDet>
+              <LinkComprar>
+            </td>
+          </tr> 
+        </table>
+
+      </td>
+    </tr></FormProd>
+  </table>
+
+</td></tr></table>
+
+</ProdLista>
+<ProdDet>
+<div id="ProdDetDiv">
+<table width="100%">
+  <tr>
+    <td class="EstNomeProd"><NomeProd></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <table width="100%"><tr>
+        <td class="EstRefProd">Ref. <CodProd> - <LegendaCat> <NomeCat></td>
+        <td align="right"><Lancamento></td>
+      </tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      
+      <table>
+        <tr>
+          <td align="center">
+            <ImagemProd>
+            <br><br>
+            <table cellspacing="1" cellpadding="5" bgcolor="#D4D4D4"><tr><td bgcolor="white">
+            <table><tr>
+              <td>Compartilhe: </td>
+              <td><ShareTwitter></td>
+              <td><ShareFacebook></td>
+              <td><Facebook type="like" layout="button_count" show_faces="false"></td>
+            </tr></table>
+            </td></tr></table>           
+          </td>
+          <td></td>
+          <td><FormProd>
+            <table>
+              <tr>
+                <td>
+                  <table>
+                    <tr><td nowrap><Adicional1></td></tr>
+                    <tr><td nowrap><Adicional2></td></tr>
+                    <tr><td nowrap><Adicional3></td></tr>
+                    <tr><td nowrap><Cor></td></tr>
+                    <tr><td nowrap><AdicionalD1></td></tr>
+                    <tr><td nowrap><AdicionalD2></td></tr>
+                    <tr><td nowrap><AdicionalD3></td></tr>
+                    <tr><td nowrap><Peso></td></tr>
+                    <tr><td nowrap>&nbsp;</td></tr>
+                    <tr><td class="EstPrecoProdDet" nowrap>
+                      <PrecoSimples>
+                      <script>MostraEconomia(<PrecoNum>,<PrecoOri>);</script><MaxParcelasProd>
+                    </td></tr>
+                    <tr><td><LinkAmp></td></tr>
+                    <tr><td><LinkComprar><AvisoDisp></td></FormProd></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+    </td>  
+  </tr>
+  <tr>
+    <td>
+      <table width="220">
+        <tr>
+          <td align="center"><script>MostraBotIndique(<IDProduto>);</script></td>
+          <td align="center"><script>MostraBotAval(<IDProduto>);</script></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class=EstDescrProd><Descricao><DescrHTM></td>
+  </tr>
+</table><br><br>
+</div>
+
+<sub>
+<table width="100%" class="<EstiloSubProduto>">
+  <tr>
+    <td colspan="5" class="EstRefSubProd">Ref. <CodProd></td>
+  </tr>
+  <tr><FormProd>
+    <td width="20%" nowrap><Cor></td>
+    <td nowrap width="20%"><Adicional1></td>
+    <td nowrap width="20%"><Adicional2></td>
+    <td nowrap width="20%"><Adicional3></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td width="20%" nowrap><Peso></td>
+    <td width="20%" nowrap><AdicionalD1></td>
+    <td width="20%" nowrap><AdicionalD2></td>
+    <td width="20%" nowrap><AdicionalD3></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td width="60%" colspan="3"></td>
+    <td width="20%" class="EstPrecoSubProd" nowrap align="right"><PrecoSimples></td>
+    <td width="20%" align="center"><LinkComprar><AvisoDisp></td></FormProd>
+  </tr>
+</table>
+</div>
+</sub>
+<table><tr height="200"><td><br><Facebook type="comments" width="490" num_posts="5"></td></tr></table>
+</ProdDet>
+
+<ProdAmp>
+<table width=100% cellpadding=0 cellspacing=0>
+  <tr><td align=center colspan=2><br></td></tr>
+  <tr>
+    <td width=7 height=<ProdAltura>><img src=images/shim.gif width=7 height=<ProdAltura>></td>
+    <td valign=top>
+      <table name=TabDadosProduto<IDProduto> width=100% cellpadding=0 cellspacing=0>
+        <tr>
+          <td valign=top>
+            <table name=TabNomeRefProd<IDProduto> width=100% cellpadding=4 cellspacing=0>
+              <tr>
+                <td valign=top class=EstNomeProd><NomeProd></td>
+                <td width=7><img src=images/shim.gif width=7 height=1></td>
+                <td valign=top align=right rowspan=2 nowrap><Lancamento></td>
+              </tr>
+              <tr>
+                <td valign=top class=EstRefProd>Ref. <CodProd> - <LegendaCat> <NomeCat></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr><td height=7><img src=images/shim.gif width=1 height=7></td></tr>
+        <tr><td align="center"><br><div id="ProdAmpDiv"><ImagemProd></div></td></tr>
+        <tr>
+          <td valign=top><br>
+            <table name=TabAdicionais<IDProduto> cellpadding=0 cellspacing=0>
+              <tr><td height=3><img src=images/shim.gif width=1 height=3></td></tr><FormProd>
+              <tr>
+                <td>
+                  <table name=Tab1Adic<IDProduto> cellpadding=0 cellspacing=0>
+                    <tr><td nowrap><Cor></td></tr>
+                    <tr><td nowrap><Adicional1></td></tr>
+                    <tr><td nowrap><Adicional2></td></tr>
+                    <tr><td nowrap><Adicional3></td></tr>
+                    <tr><td nowrap><AdicionalD1></td></tr>
+                    <tr><td nowrap><AdicionalD2></td></tr>
+                    <tr><td nowrap><AdicionalD3></td></tr>
+                    <tr><td nowrap><Peso></td></tr>             
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr><td align=right class=EstMaisInfo nowrap><DescrURL></td></tr>
+        <tr>
+          <td valign=top>
+            <table name=TabPreco<IDProduto> width=100% cellpadding=4 cellspacing=0>
+              <tr><td height=1 colspan=5><img src=images/shim.gif width=1 height=1></td></tr>
+              <tr>
+                <td width=15% nowrap><LinkDet></td>
+                <td width=7><img src=images/shim.gif width=7 height=1></td>
+                <td align=center width=15% nowrap><LinkComprar></td></FormProd>
+                <td width=7><img src=images/shim.gif width=7 height=1></td>
+                <td class=EstPrecoProdDet nowrap><PrecoSimples></td>
+              </tr>
+            </table><AvisoDisp><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table width=90% name=TabSubs cellpadding=0 cellspacing=0 align=right>
+<Sub>
+              <tr>
+                <td align=right valign=top>
+                  <table cellspacing=0 cellpadding=3><tr><td valign=top align=center><ImagemProd></td></tr></table>
+                </td>
+                <td width=20><img src=images/shim.gif width=20 height=1></td>
+                <td valign=top>
+                  <table name=TabDadosSubProduto<IDProduto> cellpadding=0 cellspacing=3 width=100% class=<EstiloSubProduto>>
+                    <tr>
+                      <td class=EstLinhaSubProd height=1><img src=images/shim.gif width=1 height=1></td>
+                    </tr>
+                    <tr>
+                      <td valign=top>
+                        <table name=TabRefSubProd<IDProduto> width=100% cellpadding=2 cellspacing=0>
+                          <tr>
+                            <td valign=top class=EstRefSubProd>Ref. <CodProd></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr><td valign=top class=EstDescrSubProd><Descricao></td></tr>
+                    <tr>
+                      <td valign=top>
+                        <table name=TabAdicionaisSub<IDProduto> cellpadding=0 cellspacing=0>
+                          <tr><td></td></tr>
+                          <tr>
+                            <td>
+                              <table name=Tab1Adic<IDProduto> cellpadding=3 cellspacing=0><FormProd>
+                                <tr>
+                                  <td nowrap><Adicional1></td>
+                                  <td nowrap><Adicional2></td>
+                                  <td nowrap><Adicional3></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table name=Tab2Adic<IDProduto> cellpadding=3 cellspacing=0>
+                                <tr>
+                                  <td nowrap><Cor></td>
+                                  <td nowrap><AdicionalD1></td>
+                                  <td nowrap><AdicionalD2></td>
+                                  <td nowrap><AdicionalD3></td>
+                                  <td nowrap><Peso></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr><td align=right nowrap><Lancamento></td></tr>
+                    <tr>
+                      <td valign=top>
+                        <table name=TabPrecoSub<IDProduto> width=100% cellpadding=4 cellspacing=0>
+                          <tr>
+                            <td width=15% nowrap><LinkDet></td>
+                            <td width=7><img src=images/shim.gif width=7 height=1></td>
+                            <td align=center width=15% nowrap><LinkComprar></td></FormProd>
+                            <td width=7><img src=images/shim.gif width=7 height=1></td>
+                            <td nowrap class=EstPrecoSubProd nowrap><Preco><AvisoDisp></td>
+                            <td width=7><img src=images/shim.gif width=7 height=1></td>
+                            <td valign=top align=right class=EstMaisInfo nowrap><DescrURL></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+</Sub>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table><tr height="200"><td><br><Facebook type="comments" width="490" num_posts="5"></td></tr></table>            
+</ProdAmp>
